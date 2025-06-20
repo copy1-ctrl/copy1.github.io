@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            position: relative;           
+        }
+        #meteorCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            display: block;
+        }
+
+        .cover {
+            position: absolute;
+            
+            left: 20px;
+            color: #7db9de;
+            font-family: Arial;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .content {
+            min-height: 100vh;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: transparent;  
+        }
+        header {
+            text-align: center;
+            padding: 3rem 0;           
+        }
+        section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+         .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin: 20px auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-left: 50px;           
+        }
+        #about {
+            display: flex;
+            flex-direction: row-reverse; /* 反转排列顺序 */
+            align-items: flex-start;
+            gap: 20px;
+        }
+        #about > div {
+            flex: 1;
+        }
+
+       .background{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+       }
+       .background.cover{
+            position: absolute;
+            bottom: -42%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+       }
+
+      
+       .intro{
+            color: #fff;
+            height: 100vh;
+            padding: 0;
+            position: relative;
+       }
+       .hello {
+            position: absolute;
+            bottom: 20%;
+            left: 0;
+        }
+        .h1{
+            font-size: 42px;
+        }
+        .hello h1 {
+            font-size: 32px;
+            letter-spacing: .5em;
+        }
+        .hello h2 {
+            padding-top: .6em;
+        }
+
+       .hello .circle span {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background-color: #fff;
+            border-radius: 100%;
+            margin-right: 5px;
+        }
+        .hello .circle span:first-child {
+            background-color: #ff493f;
+        }
+        .hello .circle span:nth-child(2) {
+            background-color: #f7c900;
+        }
+        .hello .circle span:nth-child(3) {
+            background-color: #00ff37;
+        }
+        .white-line {
+            width: 80px;
+            height: 3px;
+            background-color: white;
+            margin: 20px 0;
+            border: none;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <canvas id="meteorCanvas"></canvas>
+        <div class="cover">←→方向键控制飞船移动 | ↑加速</div>
+    </div>    
+    <div class="content">
+        <div class="ch intro">           
+                <div class="hello">
+                    <h1 id="slogan">夜幕低垂，星辰闪烁，那是一片浩瀚的画卷，铺展在无垠的宇宙之中。</h1>
+                    <h2>
+                        <div class="circle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        "我叫小胡，欢迎来到我的网页"
+                    </h2>
+                </div>
+        </div>
+        <header>           
+            <h1>欢迎来到我的空间</h1>
+            <p>软件实施 | 系统运维</p>
+        </header>
+        
+        <section id="about">
+            <img src="images/个人头像.png" alt="个人头像" class="profile-img">
+            <div>
+                <h2>
+                    在追逐梦想的路上，风雨兼程，只因心中有光，脚下有路。
+                    <hr class="white-line">
+                </h2>
+                <p>你好，我叫胡振立，正在从事软件实施，系统运维等相关工作，拥有2年左右相关经验。<br>
+                   基于本人对互联网领域持续的关注与实践，以及自身所掌握的相关技能，深刻认同该行业发展趋势与社会价值，<br>期待在这个行业的进程和发展中，继续学习和提升自己。
+                </p>
+            </div>           
+        </section>
+        
+        <section id="projects">
+            <h2>我的作品</h2>
+            <div class="project-list">
+                <div class="album">
+                    <div class="photo"><img src="images/1.png" alt="照片1"></div>
+                    <div class="photo"><img src="images/2.png" alt="照片2"></div>
+                    <div class="photo"><img src="images/3.png" alt="照片3"></div>
+                    <div class="photo"><img src="images/4.png" alt="照片4"></div>
+                    <div class="photo"><img src="images/5.png" alt="照片5"></div>
+                    <div class="photo"><img src="images/6.png" alt="照片6"></div>
+                </div>
+                <!-- 项目内容 -->
+            </div>
+        </section>
+
+        <section>
+            <h2>联系我</h2>
+            <p>电话：18407776852</p>
+            <p>邮箱:2622213950@qq.com</p>
+        </section>
+    </div>
+
+    <script src="canvasScript1.js"></script>
+</body>
+</html>
